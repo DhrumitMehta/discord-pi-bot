@@ -57,6 +57,19 @@ client.on('message', async (message) => {
         } else if (CMD_NAME === 'announce'){
             const msg = args.join(' ');
             webhookClient.send(msg);
+
+        } else if (CMD_NAME === 'roast'){
+            number = Math.floor(Math.random() * Math.floor(3));
+            if (number == 1){
+                message.channel.send("Yo mama so fat she bends spacetime (Spacetime bends around large masses)");
+            } else if (number == 2){
+                message.channel.send("Life is beautiful. You are not.");
+            } else if (number == 3){
+                message.channel.send("You're so single. Nothing else to say");
+            } else if (number == 0){
+                message.channel.send("You are so dumb that you thought a laptop is worn by girls");
+            }
+            
         }
     }
 });
