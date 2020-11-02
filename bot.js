@@ -86,7 +86,7 @@ client.on('message', async (message) => {
     } else if (message.content == '2' && piinfo){
         message.channel.send("3.1415926535 8979323846 2643383279 5028841971 6939937510 5820974944 5923078164 0628620899 8628034825 3421170679");
         piinfo = false;
-    } else if (message.content == '2' && piinfo){
+    } else if (message.content == '3' && piinfo){
         message.channel.send("Euler's Formula : (Pi^2)/6 = SUM (n = 1..infinity) of 1/n2 = 1/12 + 1/22 + 1/32 + ...");
         piinfo = false;
     }
