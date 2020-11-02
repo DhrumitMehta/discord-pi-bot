@@ -87,20 +87,10 @@ client.on('message', async (message) => {
             }
 
         } else if (CMD_NAME === 'pi'){
-            const subEmbed = new Discord.RichEmbed()
-                .setColor(0xff0000)
-                .setTitle('What do you want to know about pi? (Reply to this with eiher 1, 2 or 3 to know the corresponding facts!)')
-                .setDescription('1. A brief history of pi. 2. The first 100 decimal places of pi. 3. Some formulas to calculate pi.')
-                .setTimestamp()
-            try {
-                message.author.sendEmbed(subEmbed);
-            } catch {
-                message.reply("I was unable to message you in private, something is wrong with you!");
-            }
-            /* message.channel.send("What do you want to know about pi? (Reply to this with eiher 1, 2 or 3 to know the corresponding facts!)");
+            message.channel.send("What do you want to know about pi? (Reply to this with eiher 1, 2 or 3 to know the corresponding facts!)");
             message.channel.send("1. A brief history of pi.");
             message.channel.send("2. The first 100 decimal places of pi.");
-            message.channel.send("3. Some formulas to calculate pi."); */
+            message.channel.send("3. Some formulas to calculate pi.");
 
             piinfo = true;
 
