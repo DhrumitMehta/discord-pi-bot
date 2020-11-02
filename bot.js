@@ -96,6 +96,8 @@ client.on('message', async (message) => {
 
         } else if (CMD_NAME === 'youtube'){
             message.channel.send("https://www.youtube.com/channel/UCyOhV5RftCILMDKUCcR6vBg");
+        } else if (CMD_NAME === 'ding'){
+            message.channel.send("dong");
         }
     } 
     //sending the pi info after they reply with either 1, 2 or 3
