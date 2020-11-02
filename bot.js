@@ -95,7 +95,9 @@ client.on('message', async (message) => {
             piinfo = true;
 
         } 
-    } else if (message.content == '1' && piinfo){
+    } 
+    //sending the pi info after they reply with either 1, 2 or 3
+    else if (message.content == '1' && piinfo){
         message.channel.send("Ancient civilizations knew that there was a fixed ratio of circumference to diameter that was approximately equal to three. The Greeks refined the process and Archimedes is credited with the first theoretical calculation of Pi. In 1761 Lambert proved that Pi was irrational, that is, that it can't be written as a ratio of integer numbers. In 1882 Lindeman proved that Pi was transcendental, that is, that Pi is not the root of any algebraic equation with rational coefficients. This discovery proved that you can't 'square a circle', which was a problem that occupied many mathematicians up to that time.")
         piinfo = false;
     } else if (message.content == '2' && piinfo){
