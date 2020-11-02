@@ -94,7 +94,9 @@ client.on('message', async (message) => {
 
             piinfo = true;
 
-        } 
+        } else if (CMD_NAME === 'youtube'){
+            message.channel.send("https://www.youtube.com/channel/UCyOhV5RftCILMDKUCcR6vBg");
+        }
     } 
     //sending the pi info after they reply with either 1, 2 or 3
     else if (message.content == '1' && piinfo){
@@ -108,7 +110,7 @@ client.on('message', async (message) => {
         message.channel.send("Leibnitz's Formula : Pi/4 = 1/1 - 1/3 + 1/5 - 1/7 + ...");
         message.channel.send("Wallis Product : Pi/2 = 2/1 * 2/3 * 4/3 * 4/5 * 6/5 * 6/7 * ...");
         piinfo = false;
-    }
+    } 
 });
 
 //adding reaction roles
