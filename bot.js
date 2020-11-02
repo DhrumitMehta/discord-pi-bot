@@ -17,6 +17,8 @@ client.on('ready', () => {
     console.log(`${client.user.tag} has logged in`);
 });
 
+piinfo = false;
+
 client.on('message', async (message) => {
     if (message.author.bot) return;
     console.log(`[${message.author.tag}]: ${message.content}`);
@@ -76,17 +78,17 @@ client.on('message', async (message) => {
             message.channel.send("2. The first 100 decimal places of pi.");
             message.channel.send("3. Some formulas to calculate pi.");
 
-            if (message.content == '1'){
-                message.channel.send("Ancient civilizations knew that there was a fixed ratio of circumference to diameter that was approximately equal to three. The Greeks refined the process and Archimedes is credited with the first theoretical calculation of Pi. In 1761 Lambert proved that Pi was irrational, that is, that it can't be written as a ratio of integer numbers. In 1882 Lindeman proved that Pi was transcendental, that is, that Pi is not the root of any algebraic equation with rational coefficients. This discovery proved that you can't 'square a circle', which was a problem that occupied many mathematicians up to that time.")
-
-            }else if (message.content == '2'){
-                message.channel.send("3.1415926535 8979323846 2643383279 5028841971 6939937510 5820974944 5923078164 0628620899 8628034825 3421170679");
-
-            } else if (message.content == '3'){
-                message.channel.send("Euler's Formula : (Pi^2)/6 = SUM (n = 1..infinity) of 1/n2 = 1/12 + 1/22 + 1/32 + ...");
-
-            }
-        }
+            piinfo = true;
+        } 
+    } else if (message.content == '1' && piinfo){
+        message.channel.send("Ancient civilizations knew that there was a fixed ratio of circumference to diameter that was approximately equal to three. The Greeks refined the process and Archimedes is credited with the first theoretical calculation of Pi. In 1761 Lambert proved that Pi was irrational, that is, that it can't be written as a ratio of integer numbers. In 1882 Lindeman proved that Pi was transcendental, that is, that Pi is not the root of any algebraic equation with rational coefficients. This discovery proved that you can't 'square a circle', which was a problem that occupied many mathematicians up to that time.")
+        piinfo = false;
+    } else if (message.content == '2' && piinfo){
+        message.channel.send("3.1415926535 8979323846 2643383279 5028841971 6939937510 5820974944 5923078164 0628620899 8628034825 3421170679");
+        piinfo = false;
+    } else if (message.content == '2' && piinfo){
+        message.channel.send("Euler's Formula : (Pi^2)/6 = SUM (n = 1..infinity) of 1/n2 = 1/12 + 1/22 + 1/32 + ...");
+        piinfo = false;
     }
 });
 
