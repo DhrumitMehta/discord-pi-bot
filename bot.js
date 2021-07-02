@@ -19,6 +19,7 @@ client.on('ready', () => {
 
 piinfo = false;
 
+//all message commands
 client.on('message', async (message) => {
     if (message.author.bot) return;
     console.log(`[${message.author.tag}]: ${message.content}`);
